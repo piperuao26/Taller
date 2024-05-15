@@ -21,7 +21,7 @@ def home():
 
 @app.route('/json')
 def json ():
-    container_id = os.getenv('HOSTNAME', 'unknown')
+    container_id = os.uname()[1]
     pokenea = choice(pokeneas)
     data = f"ID: {pokenea['id']}, Nombre: {pokenea['nombre']}, Altura: {pokenea['altura']}, Habilidad: {pokenea['habilidad']}, ID Contenedor: {container_id}"
     return data
@@ -29,7 +29,7 @@ def json ():
 @app.route('/foto')
 def foto():
     pokenea = choice(pokeneas)
-    container_id = os.getenv('HOSTNAME', 'unknown')
+    container_id = os.uname()[1]
     return render_template ('foto.html', imagen=pokenea['imagen'], frase_filosofica=pokenea['frase_filosofica'], container_id=container_id)
 
 
