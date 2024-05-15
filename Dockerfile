@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 EXPOSE 8080
 
 # Specify the command to run the Flask app
-CMD ["python", "app.py"]
+CMD ["python", "pokenea.py"]
